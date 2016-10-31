@@ -1,21 +1,20 @@
-var gulp = require("gulp");
-var istanbul = require("gulp-istanbul");
-var mocha = require("gulp-mocha");
-var tsc = require("typescript");
-var typescript = require("gulp-typescript");
-var uglify = require("gulp-uglify");
+const gulp = require("gulp");
+const istanbul = require("gulp-istanbul");
+const mocha = require("gulp-mocha");
+const typescript = require("gulp-typescript");
+const uglify = require("gulp-uglify");
 
-var tsconfig = () => typescript.createProject("tsconfig.json", { typescript: tsc });
+const tsconfig = () => typescript.createProject("tsconfig.json");
 
 gulp.task("compile", () => {
 	return gulp.src(["./src/**/*.ts", "!./src/**/*.d.ts"], { base: "./" })
-		.pipe(typescript(tsconfig()))
+		.pipe(tsconfig()())
 		.pipe(gulp.dest("./build"));
 });
 
 gulp.task("compile-test", () => {
 	return gulp.src(["./test/**/*.ts", "!./test/**/*.d.ts"], { base: "./" })
-		.pipe(typescript(tsconfig()))
+		.pipe(tsconfig()())
 		.pipe(uglify())
 		.pipe(gulp.dest("./build"));
 });
