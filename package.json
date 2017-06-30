@@ -17,18 +17,17 @@
     "compile": "gulp compile",
     "compile-test": "gulp compile-test",
     "gulp": "gulp",
-    "prepublish": "typings install",
     "test": "gulp test",
-    "test-coverage": "gulp test-coverage",
-    "typings": "typings"
+    "test-coverage": "gulp test-coverage"
   },
   "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.6",
     "gulp": "^3.9.1",
-    "gulp-istanbul": "^1.1.1",
-    "gulp-mocha": "^3.0.1",
-    "gulp-typescript": "^3.1.2",
-    "gulp-uglify": "^2.0.0",
-    "typescript": "^2.0.6",
-    "typings": "^1.5.0"
+    "gulp-istanbul": "^1.1.2",
+    "gulp-mocha": "^4.3.1",
+    "gulp-typescript": "^3.1.7",
+    "gulp-uglify": "^3.0.0",
+    "typescript": "^2.4.1"
   }
 }
