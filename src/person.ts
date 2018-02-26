@@ -5,4 +5,8 @@ export default class Person {
 	getFullName(): string {
 		return this.firstName + " " + this.lastName;
 	}
+
+	getLastName(): string {
+		return this.lastName;
+	}
 }

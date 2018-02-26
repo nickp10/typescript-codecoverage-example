@@ -16,18 +16,20 @@
   "scripts": {
     "compile": "gulp compile",
     "compile-test": "gulp compile-test",
-    "gulp": "gulp",
     "test": "gulp test",
     "test-coverage": "gulp test-coverage"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.41",
-    "@types/node": "^8.0.6",
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^9.4.6",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "gulp": "^3.9.1",
-    "gulp-istanbul": "^1.1.2",
-    "gulp-mocha": "^4.3.1",
-    "gulp-typescript": "^3.1.7",
+    "gulp-babel": "^7.0.1",
+    "gulp-istanbul": "^1.1.3",
+    "gulp-mocha": "^3.0.1",
+    "gulp-typescript": "^4.0.1",
     "gulp-uglify": "^3.0.0",
-    "typescript": "^2.4.1"
+    "typescript": "^2.7.2"
   }
 }

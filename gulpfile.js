@@ -1,20 +1,27 @@
+const babel = require("gulp-babel");
 const gulp = require("gulp");
 const istanbul = require("gulp-istanbul");
 const mocha = require("gulp-mocha");
 const typescript = require("gulp-typescript");
 const uglify = require("gulp-uglify");
 
-const tsconfig = () => typescript.createProject("tsconfig.json");
-
 gulp.task("compile", () => {
+	const tsconfig = typescript.createProject("tsconfig.json");
 	return gulp.src(["./src/**/*.ts", "!./src/**/*.d.ts"], { base: "./" })
-		.pipe(tsconfig()())
+		.pipe(tsconfig())
+		.pipe(babel({
+			presets: ["env"]
+		}))
 		.pipe(gulp.dest("./build"));
 });
 
 gulp.task("compile-test", () => {
+	const tsconfig = typescript.createProject("tsconfig.json");
 	return gulp.src(["./test/**/*.ts", "!./test/**/*.d.ts"], { base: "./" })
-		.pipe(tsconfig()())
+		.pipe(tsconfig())
+		.pipe(babel({
+			presets: ["env"]
+		}))
 		.pipe(uglify())
 		.pipe(gulp.dest("./build"));
 });
