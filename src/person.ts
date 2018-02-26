@@ -1,12 +1,12 @@
 export default class Person {
-	firstName: string;
-	lastName: string;
+    firstName: string;
+    lastName: string;
 
-	getFullName(): string {
-		return this.firstName + " " + this.lastName;
-	}
+    getFullName(): string {
+        return this.firstName + " " + this.lastName;
+    }
 
-	getLastName(): string {
-		return this.lastName;
-	}
+    getLastName(): string {
+        return this.lastName;
+    }
 }
